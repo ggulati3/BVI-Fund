@@ -871,6 +871,14 @@ var _reactDom = __webpack_require__(16);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _graph = __webpack_require__(25);
+
+var _graph2 = _interopRequireDefault(_graph);
+
+var _StockChoice = __webpack_require__(26);
+
+var _StockChoice2 = _interopRequireDefault(_StockChoice);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -885,16 +893,27 @@ var Index = function (_React$Component) {
   function Index(props) {
     _classCallCheck(this, Index);
 
-    return _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).call(this, props));
+
+    _this.state = {
+      stock: 'INX'
+    };
+    return _this;
   }
 
   _createClass(Index, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'h1',
+        'div',
         null,
-        'BVI Fund Tracker'
+        _react2.default.createElement(
+          'h1',
+          null,
+          'BVI Fund Tracker'
+        ),
+        _react2.default.createElement(_StockChoice2.default, { stock: this.state.stock }),
+        _react2.default.createElement(_graph2.default, null)
       );
     }
   }]);
@@ -20389,6 +20408,64 @@ function camelize(string) {
 }
 
 module.exports = camelize;
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Graph(props) {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Stock Graph'
+    )
+  );
+}
+
+exports.default = Graph;
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function StockChoice(props) {
+  return _react2.default.createElement(
+    "div",
+    null,
+    _react2.default.createElement("input", { type: "text", name: "fname", value: "Enter Stock Abbrev." })
+  );
+}
+
+exports.default = StockChoice;
 
 /***/ })
 /******/ ]);

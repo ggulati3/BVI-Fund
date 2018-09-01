@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/', (req, res) => {
-	getStockData.everyMin('TWLO').then(function(data){
+app.get('/stockData', (req, res) => {
+	getStockData.everyMin('INX').then(function(data){
 		res.send(JSON.stringify(data))
 	})	
 })
